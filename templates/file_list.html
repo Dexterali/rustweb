@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+<style>
+    body {
+        margin: auto;
+        max-width: 1000px;
+        font-size: 18px;
+        font-family: SongTi, sans-serif;
+        font-weight: bold;
+    }
+
+    /*div ul {*/
+    /*    list-style-type: none;*/
+    /*    margin: 0;*/
+    /*    padding: 0;*/
+    /*    overflow: hidden;*/
+    /*    background-color: #333;*/
+    /*}*/
+
+    /*div li {*/
+    /*    float: left;*/
+    /*}*/
+
+    footer {
+        color: #888;
+        margin-top: 15px;
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>FileList</h1>
+<ul>
+	{% for file in filenames %}
+	<li>
+		<a href="/info/{{file.0}}" style="text-decoration:none;">{{ file.0 }} - total: {{ file.1 }}</a>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}
